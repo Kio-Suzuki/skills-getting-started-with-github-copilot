@@ -78,9 +78,16 @@ activities = {
 }
 
 
+
+# Mantém a rota original
 @app.get("/")
 def root():
     return RedirectResponse(url="/static/index.html")
+
+# Nova rota para testes
+@app.get("/api-root")
+def api_root():
+    return {"message": "API está funcionando"}
 
 
 @app.get("/activities")
